@@ -1,6 +1,4 @@
-Absolutely! Let me give you a clear **algorithm/blueprint** that you can follow to build this whole logic by yourself — without directly copying code.
 
----
 
 ## 🔁 Algorithm to Build the MultiSearch Logic
 

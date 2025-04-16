@@ -1,6 +1,6 @@
 
 
-## 🔁 Algorithm to Build the MultiSearch Logic
+## 🔁 Algorithm For Main.js to Build the MultiSearch Logic
 
 ---
 

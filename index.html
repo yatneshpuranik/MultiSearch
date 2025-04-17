@@ -21,15 +21,17 @@
       type="image/x-icon"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link  rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     
-        <div id = "col1">
-          
-        </div>
-        <div id="col2">
+        <div class = "col1"></div>
+        <div class="col2">
             <h1> Multisearch</h1>
+            <div class=".searchbar">
             <input
               type="text"
               id="search"
@@ -37,17 +39,20 @@
               title="Search field"
               autocomplete="off"
             />
+            <i  id= "icon" class="fa-solid fa-magnifying-glass"></i>
+            </div>
             <div class="col2Container"></div>
-            <div id="mostlyused">
+            <div class="github">
                 <a 
                 herf ="https://github.com/yatneshpuranik/MultiSearch.git"
                 title="Git Repository"
                 target="_blank"
                 rel="noopener noreferrer"
-                ></a>
+                ><i class="fa-brands fa-github"></i></a>
             </div>
+            
         </div>
-        <div id="col3"></div>
-     
+        <div class="col3"></div>
+        <script type="module" src="/main.js"></script>
 </body>
 </html>

@@ -14,7 +14,6 @@ let openURL = (baseUrl, queryParam, query) => {
     url = baseUrl;
   }
 
-  // Open the constructed URL in a new tab
   window.open(url, "_blank");
 };
 
@@ -36,6 +35,12 @@ function getFaviconUrl(url) {
   return fallbackFavicons[url] || googleFaviconUrl;
 }
 
+const clearColumns = () => {
+  col1.innerHTML = "";
+  col2.innerHTML = "";
+  col3.innerHTML = "";
+};
+
 const getButton = () => {
   const createButton = (platform) => {
     const buttonWrapper = document.createElement("div");
@@ -54,7 +59,7 @@ const getButton = () => {
 
     button.addEventListener("click", () => {
       const query = document.querySelector(".search")?.value || "";
-      if (platform.queryParam) {
+      if (platform.queryParam && query) {
         openURL(platform.url, platform.queryParam, query);
       } else {
         button.classList.add("unsearchable");
@@ -88,6 +93,8 @@ const getButton = () => {
     column.appendChild(accordionWrapper);
   };
 
+  clearColumns();
+
   for (const category in platforms.col1) {
     createAccordion(category, platforms.col1[category], col1);
   }
@@ -106,42 +113,24 @@ const getButton = () => {
 
 getButton();
 
-document.addEventListener("keydown", (event) => {
-  const searchInput = document.querySelector(".search");
+document.querySelector(".search-icon").addEventListener("click", () => {
+  const query = document.querySelector(".search").value.trim();
+  const [prefix, ...rest] = query.split(" ");
+  const queryText = rest.join(" ");
 
-  const isSlash = event.key === "/";
-  const isCtrlK = (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k";
+  const engines = {
+    g: ["https://www.google.com", "/search?q="],
+    yt: ["https://www.youtube.com", "/results?search_query="],
+    mdn: ["https://developer.mozilla.org/en-US/search", "?q="],
+    gh: ["https://github.com/search", "?q="],
+  };
 
-  if (isSlash || isCtrlK) {
-    event.preventDefault();
-    searchInput.focus();
-
-    setTimeout(() => searchInput.classList.remove("focused"), 500); 
-  } else if (event.key === "Escape") {
-    searchInput.blur();
+  if (engines[prefix]) {
+    const [url, param] = engines[prefix];
+    openURL(url, param, queryText); 
+  } else {
+    openURL("https://www.google.com", "/search?q=", query);
   }
+
+  clearColumns();
 });
-
-document.querySelector(".search-icon").addEventListener("click", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    const input = event.target.value.trim();
-    const [prefix, ...rest] = input.split(" ");
-    const query = rest.join(" ");
-
-    const engines = {
-      g: ["https://www.google.com", "/search?q="],
-      yt: ["https://www.youtube.com", "/results?search_query="],
-      mdn: ["https://developer.mozilla.org/en-US/search", "?q="],
-      gh: ["https://github.com/search", "?q="],
-    };
-
-    if (engines[prefix]) {
-      const [url, param] = engines[prefix];
-      openURL(url, param, query); 
-    } else {
-      openURL("https://www.google.com", "/search?q=", input);
-    }
-  }
-});
-

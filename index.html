@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6RJVD1JVK"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-Q6RJVD1JVK");
-  </script>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link
-    rel="icon"
-    href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmIj48ZyBpZD0iU1ZHUmVwb19iZ0NhcnJpZXIiIHN0cm9rZS13aWR0aD0iMCI+PC9nPjxnIGlkPSJTVkdSZXBvX3RyYWNlckNhcnJpZXIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PC9nPjxnIGlkPSJTVkdSZXBvX2ljb25DYXJyaWVyIj4gPGcgaWQ9IkludGVyZmFjZSAvIFNlYXJjaF9NYWduaWZ5aW5nX0dsYXNzIj4gPHBhdGggaWQ9IlZlY3RvciIgZD0iTTE1IDE1TDIxIDIxTTEwIDE3QzYuMTM0MDEgMTcgMyAxMy44NjYgMyAxMEMzIDYuMTM0MDEgNi4xMzQwMSAzIDEwIDNDMTMuODY2IDMgMTcgNi4xMzQwMSAxNyAxMEMxNyAxMy44NjYgMTMuODY2IDE3IDEwIDE3WiIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PC9wYXRoPiA8L2c+IDwvZz48L3N2Zz4="
-    type="image/x-icon"
-  />
-  <link rel="stylesheet" href="style.css" />
-  <title>Document</title>
-</head>
+  <head>
+    <!-- Meta tags should come first -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <!-- Title of the page -->
+    <title>MultiSearch</title>
+  
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml;base64,...yourBase64IconHere..."
+      type="image/x-icon"
+    />
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+    <!-- Custom stylesheet (loaded after fonts and icons) -->
+    <link rel="stylesheet" href="style.css" />
+  
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6RJVD1JVK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-Q6RJVD1JVK");
+    </script>
+  </head>
+  
 <body>
   <div class="col1"></div>
 
   <div class="col2">
     <h1>Multisearch</h1>
 
-    <div class="searchbar" >
+    <div class="searchbar">
       <input
         type="text"
         id="search"
         class="search"
         title="Search field"
         autocomplete="off"
-      />
-      <i id="icon" class="fa-solid fa-magnifying-glass" style="color: white; font-size: 1.2rem;"></i>
+      >
+      <div class="search-icon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
     </div>
 
-    <div class="col2Container"></div>
+    <div class="col2Container">
+    </div>
 
     <div class="github">
       <a

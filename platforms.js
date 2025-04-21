@@ -464,7 +464,6 @@ const platforms = {
       {
         name: "Target",
         url: "https://www.target.com",
-        url: "https://www.target.com",
         queryParam: "/s?searchTerm=",
       },
       {
